@@ -1,0 +1,8 @@
+/var/log/shadowsocks.log {
+    missingok
+    notifempty
+    monthly
+    create 0600 root root
+	minsize 10M
+    rotate 6 
+}
