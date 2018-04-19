@@ -13,7 +13,7 @@ ENV ELREPO_FILE='http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rp
 WORKDIR /root
 USER root
 # Create json config
-sed -i.bak -e "s/8989/${SS_PORT}/" -e "s/PASSWORD/${SS_PASSWORD}/" shadowsocks.json
+RUN sed -i.bak -e "s/8989/${SS_PORT}/" -e "s/PASSWORD/${SS_PASSWORD}/" shadowsocks.json
 COPY shadowsocks.json /etc/shadowsocks.json
 EXPOSE 8989 1080
 RUN yum install -y wget lsof \
